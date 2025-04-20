@@ -12905,6 +12905,208 @@ var createCache = function createCache2(options) {
   cache.sheet.hydrate(nodesToHydrate);
   return cache;
 };
+var reactIs = { exports: {} };
+var reactIs_production_min = {};
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+var hasRequiredReactIs_production_min;
+function requireReactIs_production_min() {
+  if (hasRequiredReactIs_production_min) return reactIs_production_min;
+  hasRequiredReactIs_production_min = 1;
+  var b = "function" === typeof Symbol && Symbol.for, c = b ? Symbol.for("react.element") : 60103, d = b ? Symbol.for("react.portal") : 60106, e = b ? Symbol.for("react.fragment") : 60107, f = b ? Symbol.for("react.strict_mode") : 60108, g = b ? Symbol.for("react.profiler") : 60114, h = b ? Symbol.for("react.provider") : 60109, k = b ? Symbol.for("react.context") : 60110, l = b ? Symbol.for("react.async_mode") : 60111, m = b ? Symbol.for("react.concurrent_mode") : 60111, n = b ? Symbol.for("react.forward_ref") : 60112, p = b ? Symbol.for("react.suspense") : 60113, q = b ? Symbol.for("react.suspense_list") : 60120, r = b ? Symbol.for("react.memo") : 60115, t = b ? Symbol.for("react.lazy") : 60116, v = b ? Symbol.for("react.block") : 60121, w = b ? Symbol.for("react.fundamental") : 60117, x = b ? Symbol.for("react.responder") : 60118, y = b ? Symbol.for("react.scope") : 60119;
+  function z(a) {
+    if ("object" === typeof a && null !== a) {
+      var u = a.$$typeof;
+      switch (u) {
+        case c:
+          switch (a = a.type, a) {
+            case l:
+            case m:
+            case e:
+            case g:
+            case f:
+            case p:
+              return a;
+            default:
+              switch (a = a && a.$$typeof, a) {
+                case k:
+                case n:
+                case t:
+                case r:
+                case h:
+                  return a;
+                default:
+                  return u;
+              }
+          }
+        case d:
+          return u;
+      }
+    }
+  }
+  function A(a) {
+    return z(a) === m;
+  }
+  reactIs_production_min.AsyncMode = l;
+  reactIs_production_min.ConcurrentMode = m;
+  reactIs_production_min.ContextConsumer = k;
+  reactIs_production_min.ContextProvider = h;
+  reactIs_production_min.Element = c;
+  reactIs_production_min.ForwardRef = n;
+  reactIs_production_min.Fragment = e;
+  reactIs_production_min.Lazy = t;
+  reactIs_production_min.Memo = r;
+  reactIs_production_min.Portal = d;
+  reactIs_production_min.Profiler = g;
+  reactIs_production_min.StrictMode = f;
+  reactIs_production_min.Suspense = p;
+  reactIs_production_min.isAsyncMode = function(a) {
+    return A(a) || z(a) === l;
+  };
+  reactIs_production_min.isConcurrentMode = A;
+  reactIs_production_min.isContextConsumer = function(a) {
+    return z(a) === k;
+  };
+  reactIs_production_min.isContextProvider = function(a) {
+    return z(a) === h;
+  };
+  reactIs_production_min.isElement = function(a) {
+    return "object" === typeof a && null !== a && a.$$typeof === c;
+  };
+  reactIs_production_min.isForwardRef = function(a) {
+    return z(a) === n;
+  };
+  reactIs_production_min.isFragment = function(a) {
+    return z(a) === e;
+  };
+  reactIs_production_min.isLazy = function(a) {
+    return z(a) === t;
+  };
+  reactIs_production_min.isMemo = function(a) {
+    return z(a) === r;
+  };
+  reactIs_production_min.isPortal = function(a) {
+    return z(a) === d;
+  };
+  reactIs_production_min.isProfiler = function(a) {
+    return z(a) === g;
+  };
+  reactIs_production_min.isStrictMode = function(a) {
+    return z(a) === f;
+  };
+  reactIs_production_min.isSuspense = function(a) {
+    return z(a) === p;
+  };
+  reactIs_production_min.isValidElementType = function(a) {
+    return "string" === typeof a || "function" === typeof a || a === e || a === m || a === g || a === f || a === p || a === q || "object" === typeof a && null !== a && (a.$$typeof === t || a.$$typeof === r || a.$$typeof === h || a.$$typeof === k || a.$$typeof === n || a.$$typeof === w || a.$$typeof === x || a.$$typeof === y || a.$$typeof === v);
+  };
+  reactIs_production_min.typeOf = z;
+  return reactIs_production_min;
+}
+var hasRequiredReactIs;
+function requireReactIs() {
+  if (hasRequiredReactIs) return reactIs.exports;
+  hasRequiredReactIs = 1;
+  {
+    reactIs.exports = requireReactIs_production_min();
+  }
+  return reactIs.exports;
+}
+var hoistNonReactStatics_cjs;
+var hasRequiredHoistNonReactStatics_cjs;
+function requireHoistNonReactStatics_cjs() {
+  if (hasRequiredHoistNonReactStatics_cjs) return hoistNonReactStatics_cjs;
+  hasRequiredHoistNonReactStatics_cjs = 1;
+  var reactIs2 = requireReactIs();
+  var REACT_STATICS = {
+    childContextTypes: true,
+    contextType: true,
+    contextTypes: true,
+    defaultProps: true,
+    displayName: true,
+    getDefaultProps: true,
+    getDerivedStateFromError: true,
+    getDerivedStateFromProps: true,
+    mixins: true,
+    propTypes: true,
+    type: true
+  };
+  var KNOWN_STATICS = {
+    name: true,
+    length: true,
+    prototype: true,
+    caller: true,
+    callee: true,
+    arguments: true,
+    arity: true
+  };
+  var FORWARD_REF_STATICS = {
+    "$$typeof": true,
+    render: true,
+    defaultProps: true,
+    displayName: true,
+    propTypes: true
+  };
+  var MEMO_STATICS = {
+    "$$typeof": true,
+    compare: true,
+    defaultProps: true,
+    displayName: true,
+    propTypes: true,
+    type: true
+  };
+  var TYPE_STATICS = {};
+  TYPE_STATICS[reactIs2.ForwardRef] = FORWARD_REF_STATICS;
+  TYPE_STATICS[reactIs2.Memo] = MEMO_STATICS;
+  function getStatics(component) {
+    if (reactIs2.isMemo(component)) {
+      return MEMO_STATICS;
+    }
+    return TYPE_STATICS[component["$$typeof"]] || REACT_STATICS;
+  }
+  var defineProperty = Object.defineProperty;
+  var getOwnPropertyNames = Object.getOwnPropertyNames;
+  var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+  var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+  var getPrototypeOf = Object.getPrototypeOf;
+  var objectPrototype = Object.prototype;
+  function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+    if (typeof sourceComponent !== "string") {
+      if (objectPrototype) {
+        var inheritedComponent = getPrototypeOf(sourceComponent);
+        if (inheritedComponent && inheritedComponent !== objectPrototype) {
+          hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+        }
+      }
+      var keys = getOwnPropertyNames(sourceComponent);
+      if (getOwnPropertySymbols) {
+        keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+      }
+      var targetStatics = getStatics(targetComponent);
+      var sourceStatics = getStatics(sourceComponent);
+      for (var i = 0; i < keys.length; ++i) {
+        var key = keys[i];
+        if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
+          var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+          try {
+            defineProperty(targetComponent, key, descriptor);
+          } catch (e) {
+          }
+        }
+      }
+    }
+    return targetComponent;
+  }
+  hoistNonReactStatics_cjs = hoistNonReactStatics;
+  return hoistNonReactStatics_cjs;
+}
+requireHoistNonReactStatics_cjs();
 var isBrowser = true;
 function getRegisteredStyles(registered, registeredStyles, classNames) {
   var rawClassName = "";
@@ -13195,6 +13397,7 @@ var syncFallback = function syncFallback2(create) {
 };
 var useInsertionEffect = React$1["useInsertionEffect"] ? React$1["useInsertionEffect"] : false;
 var useInsertionEffectAlwaysWithSyncFallback = useInsertionEffect || syncFallback;
+var useInsertionEffectWithLayoutFallback = useInsertionEffect || reactExports.useLayoutEffect;
 var EmotionCacheContext = /* @__PURE__ */ reactExports.createContext(
   // we're doing this to avoid preconstruct's dead code elimination in this one case
   // because this module is primarily intended for the browser and node
@@ -13214,6 +13417,129 @@ var withEmotionCache = function withEmotionCache2(func) {
   });
 };
 var ThemeContext = /* @__PURE__ */ reactExports.createContext({});
+var hasOwn = {}.hasOwnProperty;
+var typePropName = "__EMOTION_TYPE_PLEASE_DO_NOT_USE__";
+var createEmotionProps = function createEmotionProps2(type, props) {
+  var newProps = {};
+  for (var _key in props) {
+    if (hasOwn.call(props, _key)) {
+      newProps[_key] = props[_key];
+    }
+  }
+  newProps[typePropName] = type;
+  return newProps;
+};
+var Insertion$1 = function Insertion(_ref) {
+  var cache = _ref.cache, serialized = _ref.serialized, isStringTag = _ref.isStringTag;
+  registerStyles(cache, serialized, isStringTag);
+  useInsertionEffectAlwaysWithSyncFallback(function() {
+    return insertStyles(cache, serialized, isStringTag);
+  });
+  return null;
+};
+var Emotion = /* @__PURE__ */ withEmotionCache(function(props, cache, ref) {
+  var cssProp = props.css;
+  if (typeof cssProp === "string" && cache.registered[cssProp] !== void 0) {
+    cssProp = cache.registered[cssProp];
+  }
+  var WrappedComponent = props[typePropName];
+  var registeredStyles = [cssProp];
+  var className = "";
+  if (typeof props.className === "string") {
+    className = getRegisteredStyles(cache.registered, registeredStyles, props.className);
+  } else if (props.className != null) {
+    className = props.className + " ";
+  }
+  var serialized = serializeStyles(registeredStyles, void 0, reactExports.useContext(ThemeContext));
+  className += cache.key + "-" + serialized.name;
+  var newProps = {};
+  for (var _key2 in props) {
+    if (hasOwn.call(props, _key2) && _key2 !== "css" && _key2 !== typePropName && true) {
+      newProps[_key2] = props[_key2];
+    }
+  }
+  newProps.className = className;
+  if (ref) {
+    newProps.ref = ref;
+  }
+  return /* @__PURE__ */ reactExports.createElement(reactExports.Fragment, null, /* @__PURE__ */ reactExports.createElement(Insertion$1, {
+    cache,
+    serialized,
+    isStringTag: typeof WrappedComponent === "string"
+  }), /* @__PURE__ */ reactExports.createElement(WrappedComponent, newProps));
+});
+var Emotion$1 = Emotion;
+var jsx = function jsx2(type, props) {
+  var args = arguments;
+  if (props == null || !hasOwn.call(props, "css")) {
+    return reactExports.createElement.apply(void 0, args);
+  }
+  var argsLength = args.length;
+  var createElementArgArray = new Array(argsLength);
+  createElementArgArray[0] = Emotion$1;
+  createElementArgArray[1] = createEmotionProps(type, props);
+  for (var i = 2; i < argsLength; i++) {
+    createElementArgArray[i] = args[i];
+  }
+  return reactExports.createElement.apply(null, createElementArgArray);
+};
+(function(_jsx) {
+  var JSX;
+  /* @__PURE__ */ (function(_JSX) {
+  })(JSX || (JSX = _jsx.JSX || (_jsx.JSX = {})));
+})(jsx || (jsx = {}));
+var Global = /* @__PURE__ */ withEmotionCache(function(props, cache) {
+  var styles = props.styles;
+  var serialized = serializeStyles([styles], void 0, reactExports.useContext(ThemeContext));
+  var sheetRef = reactExports.useRef();
+  useInsertionEffectWithLayoutFallback(function() {
+    var key = cache.key + "-global";
+    var sheet = new cache.sheet.constructor({
+      key,
+      nonce: cache.sheet.nonce,
+      container: cache.sheet.container,
+      speedy: cache.sheet.isSpeedy
+    });
+    var rehydrating = false;
+    var node2 = document.querySelector('style[data-emotion="' + key + " " + serialized.name + '"]');
+    if (cache.sheet.tags.length) {
+      sheet.before = cache.sheet.tags[0];
+    }
+    if (node2 !== null) {
+      rehydrating = true;
+      node2.setAttribute("data-emotion", key);
+      sheet.hydrate([node2]);
+    }
+    sheetRef.current = [sheet, rehydrating];
+    return function() {
+      sheet.flush();
+    };
+  }, [cache]);
+  useInsertionEffectWithLayoutFallback(function() {
+    var sheetRefCurrent = sheetRef.current;
+    var sheet = sheetRefCurrent[0], rehydrating = sheetRefCurrent[1];
+    if (rehydrating) {
+      sheetRefCurrent[1] = false;
+      return;
+    }
+    if (serialized.next !== void 0) {
+      insertStyles(cache, serialized.next, true);
+    }
+    if (sheet.tags.length) {
+      var element = sheet.tags[sheet.tags.length - 1].nextElementSibling;
+      sheet.before = element;
+      sheet.flush();
+    }
+    cache.insert("", serialized, sheet, false);
+  }, [cache, serialized.name]);
+  return null;
+});
+function css() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+  return serializeStyles(args);
+}
 var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|abbr|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|disableRemotePlayback|download|draggable|encType|enterKeyHint|fetchpriority|fetchPriority|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|translate|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|incremental|fallback|inert|itemProp|itemScope|itemType|itemID|itemRef|on|option|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/;
 var isPropValid = /* @__PURE__ */ memoize(
   function(prop) {
@@ -13244,7 +13570,7 @@ var composeShouldForwardProps = function composeShouldForwardProps2(tag, options
   }
   return shouldForwardProp;
 };
-var Insertion = function Insertion2(_ref) {
+var Insertion2 = function Insertion3(_ref) {
   var cache = _ref.cache, serialized = _ref.serialized, isStringTag = _ref.isStringTag;
   registerStyles(cache, serialized, isStringTag);
   useInsertionEffectAlwaysWithSyncFallback(function() {
@@ -13315,7 +13641,7 @@ var createStyled = function createStyled2(tag, options) {
       if (ref) {
         newProps.ref = ref;
       }
-      return /* @__PURE__ */ reactExports.createElement(reactExports.Fragment, null, /* @__PURE__ */ reactExports.createElement(Insertion, {
+      return /* @__PURE__ */ reactExports.createElement(reactExports.Fragment, null, /* @__PURE__ */ reactExports.createElement(Insertion2, {
         cache,
         serialized,
         isStringTag: typeof FinalTag === "string"
@@ -13482,29 +13808,6 @@ var newStyled = createStyled.bind(null);
 tags.forEach(function(tagName) {
   newStyled[tagName] = newStyled(tagName);
 });
-const Wrapper = newStyled.div`
-  width: 480px;
-  height: 100vh;
-  margin: 0 auto;
-  box-shadow:
-    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  padding: 72px 32px;
-  overflow-y: scroll;
-`;
-const CardPreviewWrapper$1 = newStyled.div`
-  display: flex;
-  justify-content: center;
-`;
-const CardInfoForm = newStyled.form`
-  display: flex;
-  gap: 32px;
-  flex-direction: column;
-`;
-const InputWrapper$1 = newStyled.div`
-  display: flex;
-  gap: 10px;
-`;
 const TitleBox = newStyled.div`
   display: flex;
   flex-direction: column;
@@ -13520,15 +13823,15 @@ const Description = newStyled.p`
   color: #8b95a1;
   font-size: 0.8rem;
 `;
-function Title({ children, description }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(TitleBox, { children: [
+const Title = reactExports.forwardRef(function Title2({ children, description, ...props }, ref) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(TitleBox, { ref, ...props, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Title$1, { children }),
     description && /* @__PURE__ */ jsxRuntimeExports.jsx(Description, { children: description })
   ] });
-}
-function Label({ id, children }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: id, children });
-}
+});
+const Label = reactExports.forwardRef(function Label2({ id, children, ...props }, ref) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx("label", { htmlFor: id, ref, ...props, children });
+});
 const Input$1 = newStyled.input`
   border: 1px solid ${(props) => props.isError ? "#f00" : "#acacac"};
   border-radius: 4px;
@@ -13539,61 +13842,185 @@ const Input$1 = newStyled.input`
   }
   ${(props) => props.isError && `outline: #f00`};
 `;
-function Input({ placeholder, maxLength, value, onChange, isError }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(
-    Input$1,
-    {
-      type: "text",
-      placeholder,
-      maxLength,
-      value,
-      onChange,
-      isError
-    }
-  );
-}
+const Input = reactExports.forwardRef(function Input2({ isError = false, ...props }, ref) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Input$1, { ...props, isError, ref });
+});
 const Spacing$1 = newStyled.div`
   height: ${(props) => props.size}px;
 `;
-function Spacing({ size }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing$1, { size });
-}
+const Spacing = reactExports.forwardRef(function Spacing2({ size, ...props }, ref) {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing$1, { size, ref, ...props });
+});
 const ErrorBox = newStyled.p`
   color: #ff3d3d;
   font-size: 12px;
+  height: 12px;
 `;
 function ErrorMessage({ children }) {
+  if (!children) return null;
   return /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorBox, { children });
 }
 const VISA_CARD_CONDITIONS = ["4"];
 const MASTER_CARD_CONDITIONS = ["51", "52", "53", "54", "55"];
 const MASKING = "·";
 const ERROR_MESSAGE = {
-  onlyNumber: "숫자만 입력해주세요.",
-  validMonth: "유효한 월을 입력해주세요.",
-  pastYear: "유효기간이 지난 것 같아요."
+  cardNumber: {
+    length: "카드 번호는 4자리씩 입력해주세요."
+  },
+  cardExpirationDate: {
+    month: "MM형식의 유효한 월을 입력해주세요.",
+    year: "YY형식의 유효한 년도를 입력해주세요."
+  },
+  cardCVCNumber: {
+    length: "CVC 번호는 3자리만 입력해주세요."
+  }
 };
+const checkValidCVCNumber = (value) => {
+  if (value.length === 3) return true;
+  return false;
+};
+const getErrorMessageFromObject = (errorMessage) => {
+  for (const [, errorMassage] of Object.entries(errorMessage)) {
+    if (errorMassage !== "") return errorMassage;
+  }
+  return "";
+};
+const checkAllNumber = (value) => {
+  return /^[0-9]*$/.test(value);
+};
+function CardCVCNumber({
+  cardCVCNumber,
+  setCardCVCNumber,
+  cardCVCNumberErrorMessage,
+  setCardCVCNumberErrorMessage
+}) {
+  const handleInputChange = (value) => {
+    if (!checkAllNumber(value)) return;
+    setCardCVCNumber(value);
+    if (checkValidCVCNumber(value)) setCardCVCNumberErrorMessage("");
+    else setCardCVCNumberErrorMessage(ERROR_MESSAGE.cardCVCNumber.length);
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Title, { children: "CVC 번호를 입력해 주세요" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 24 }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Label, { id: "card-cvc-number", children: "CVC" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 8 }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+      Input,
+      {
+        placeholder: "123",
+        maxLength: 3,
+        value: cardCVCNumber,
+        onChange: (event) => handleInputChange(event.target.value),
+        isError: cardCVCNumberErrorMessage !== ""
+      }
+    ) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 8 }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorMessage, { children: cardCVCNumberErrorMessage })
+  ] });
+}
+const InputWrapper$1 = newStyled.div`
+  display: flex;
+  gap: 10px;
+`;
+const checkValidMonth = (value) => {
+  if (Number(value) >= 1 && Number(value) <= 12 && value.length === 2) return true;
+  return false;
+};
+const checkValidYear = (value) => {
+  if (value.length === 2) return true;
+  return false;
+};
+function CardExpirationDate({
+  cardExpirationDate,
+  setCardExpirationDate,
+  cardExpirationDateErrorMessage,
+  setCardExpirationDateErrorMessage
+}) {
+  const handleInputChange = ({ value, dateType }) => {
+    if (!checkAllNumber(value)) return;
+    setCardExpirationDate({ ...cardExpirationDate, [dateType]: value });
+    if (dateType === "month") {
+      if (checkValidMonth(value)) {
+        setCardExpirationDateErrorMessage({ ...cardExpirationDateErrorMessage, month: "" });
+      } else {
+        setCardExpirationDateErrorMessage({
+          ...cardExpirationDateErrorMessage,
+          month: ERROR_MESSAGE.cardExpirationDate.month
+        });
+      }
+    }
+    if (dateType === "year") {
+      if (checkValidYear(value)) {
+        setCardExpirationDateErrorMessage({ ...cardExpirationDateErrorMessage, year: "" });
+      } else {
+        setCardExpirationDateErrorMessage({
+          ...cardExpirationDateErrorMessage,
+          year: ERROR_MESSAGE.cardExpirationDate.year
+        });
+      }
+    }
+  };
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Title, { description: "월/년도(MMYY)를 순서대로 입력해 주세요.", children: "카드 유효기간을 입력해 주세요" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 24 }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Label, { id: "card-expiration-date", children: "유효기간" }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 8 }),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(InputWrapper$1, { children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        Input,
+        {
+          placeholder: "MM",
+          maxLength: 2,
+          value: cardExpirationDate.month,
+          onChange: (event) => handleInputChange({
+            value: event.target.value,
+            dateType: "month"
+          }),
+          isError: cardExpirationDateErrorMessage.month !== ""
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        Input,
+        {
+          placeholder: "YY",
+          maxLength: 2,
+          value: cardExpirationDate.year,
+          onChange: (event) => handleInputChange({
+            value: event.target.value,
+            dateType: "year"
+          }),
+          isError: cardExpirationDateErrorMessage.year !== ""
+        }
+      )
+    ] }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 8 }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorMessage, { children: getErrorMessageFromObject(cardExpirationDateErrorMessage) })
+  ] });
+}
+const InputWrapper = newStyled.div`
+  display: flex;
+  gap: 10px;
+`;
 function CardNumber({
   cardNumber,
   setCardNumber,
   cardNumberErrorMessage,
   setCardNumberErrorMessage
 }) {
-  var _a;
   const handleInputChange = ({ value, sequence }) => {
+    if (!checkAllNumber(value)) return;
     setCardNumber({ ...cardNumber, [sequence]: value });
-    if (/^[0-9]*$/.test(value)) {
-      setCardNumberErrorMessage({ ...cardNumberErrorMessage, [sequence]: "" });
-      return;
-    }
-    setCardNumberErrorMessage({ ...cardNumberErrorMessage, [sequence]: ERROR_MESSAGE.onlyNumber });
+    if (value.length < 4)
+      setCardNumberErrorMessage({ ...cardNumberErrorMessage, [sequence]: ERROR_MESSAGE.cardNumber.length });
+    else setCardNumberErrorMessage({ ...cardNumberErrorMessage, [sequence]: "" });
   };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Title, { description: "본인 명의의 카드만 결제 가능합니다.", children: "결제할 카드 번호를 입력해 주세요" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 24 }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Label, { id: "card-number", children: "카드 번호" }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 8 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(InputWrapper$1, { children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(InputWrapper, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         Input,
         {
@@ -13648,128 +14075,10 @@ function CardNumber({
       )
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 8 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorMessage, { children: (_a = Object.entries(cardNumberErrorMessage).filter(([_, errorMassage]) => errorMassage !== "").at(0)) == null ? void 0 : _a[1] })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorMessage, { children: getErrorMessageFromObject(cardNumberErrorMessage) })
   ] });
 }
-const InputWrapper = newStyled.div`
-  display: flex;
-  gap: 10px;
-`;
-function CardExpirationDate({
-  cardExpirationDate,
-  setCardExpirationDate,
-  cardExpirationDateErrorMessage,
-  setCardExpirationDateErrorMessage
-}) {
-  var _a;
-  const handleInputChange = ({ value, dateType }) => {
-    setCardExpirationDate({ ...cardExpirationDate, [dateType]: value });
-    setCardExpirationDateErrorMessage({
-      ...cardExpirationDateErrorMessage,
-      [dateType]: ""
-    });
-    if (!/^[0-9]*$/.test(value)) {
-      setCardExpirationDateErrorMessage({ ...cardExpirationDateErrorMessage, [dateType]: ERROR_MESSAGE.onlyNumber });
-      return;
-    }
-    const valueAsNumber = parseInt(value, 10);
-    if (dateType === "month") {
-      if (valueAsNumber < 0 || valueAsNumber > 12 || value === "00") {
-        setCardExpirationDateErrorMessage({ ...cardExpirationDateErrorMessage, [dateType]: ERROR_MESSAGE.validMonth });
-      }
-      if (Number(cardExpirationDate.year) === Number(String((/* @__PURE__ */ new Date()).getFullYear()).slice(2)) && valueAsNumber < (/* @__PURE__ */ new Date()).getMonth() + 1) {
-        setCardExpirationDateErrorMessage({
-          ...cardExpirationDateErrorMessage,
-          [dateType]: ERROR_MESSAGE.pastYear
-        });
-      }
-    }
-    if (dateType === "year") {
-      if (valueAsNumber < Number(String((/* @__PURE__ */ new Date()).getFullYear()).slice(2))) {
-        setCardExpirationDateErrorMessage({
-          ...cardExpirationDateErrorMessage,
-          [dateType]: ERROR_MESSAGE.pastYear
-        });
-      }
-      if (valueAsNumber === Number(String((/* @__PURE__ */ new Date()).getFullYear()).slice(2)) && Number(cardExpirationDate.month) < (/* @__PURE__ */ new Date()).getMonth() + 1) {
-        setCardExpirationDateErrorMessage({
-          ...cardExpirationDateErrorMessage,
-          [dateType]: ERROR_MESSAGE.pastYear
-        });
-      }
-    }
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Title, { description: "월/년도(MMYY)를 순서대로 입력해 주세요.", children: "카드 유효기간을 입력해 주세요" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 24 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Label, { id: "card-expiration-date", children: "유효기간" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 8 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(InputWrapper, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        Input,
-        {
-          placeholder: "MM",
-          maxLength: 2,
-          value: cardExpirationDate.month,
-          onChange: (event) => handleInputChange({
-            value: event.target.value,
-            dateType: "month"
-          }),
-          isError: cardExpirationDateErrorMessage.month !== ""
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        Input,
-        {
-          placeholder: "YY",
-          maxLength: 2,
-          value: cardExpirationDate.year,
-          onChange: (event) => handleInputChange({
-            value: event.target.value,
-            dateType: "year"
-          }),
-          isError: cardExpirationDateErrorMessage.year !== ""
-        }
-      )
-    ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 8 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorMessage, { children: (_a = Object.entries(cardExpirationDateErrorMessage).filter(([_, errorMassage]) => errorMassage !== "").at(0)) == null ? void 0 : _a[1] })
-  ] });
-}
-function CardCVCNumber({
-  cardCVCNumber,
-  setCardCVCNumber,
-  cardCVCNumberErrorMessage,
-  setCardCVCNumberErrorMessage
-}) {
-  const handleInputChange = (value) => {
-    setCardCVCNumber(value);
-    if (/^[0-9]*$/.test(value)) {
-      setCardCVCNumberErrorMessage("");
-      return;
-    }
-    setCardCVCNumberErrorMessage(ERROR_MESSAGE.onlyNumber);
-  };
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Title, { children: "CVC 번호를 입력해 주세요" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 24 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Label, { id: "card-cvc-number", children: "CVC" }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 8 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-      Input,
-      {
-        placeholder: "123",
-        maxLength: 3,
-        value: cardCVCNumber,
-        onChange: (event) => handleInputChange(event.target.value),
-        isError: cardCVCNumberErrorMessage !== ""
-      }
-    ) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 8 }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(ErrorMessage, { children: cardCVCNumberErrorMessage })
-  ] });
-}
-const CardPreviewWrapper = newStyled.div`
+const CardPreviewWrapper$1 = newStyled.div`
   width: 212px;
   height: 132px;
   background-color: #333;
@@ -13798,6 +14107,9 @@ const CardPreviewMiddle = newStyled.div`
   align-items: center;
   text-align: center;
   vertical-align: middle;
+`;
+const CardPreviewNumber = newStyled.span`
+  flex: 1;
 `;
 function MasterCard({ width }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("svg", { width, viewBox: "0 0 83 57", fill: "none", xmlns: "http://www.w3.org/2000/svg", children: [
@@ -13870,29 +14182,168 @@ function VisaCard({ width }) {
   ] });
 }
 function CardPreview({ cardType, cardNumber, cardExpirationDate }) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(CardPreviewWrapper, { children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(CardPreviewWrapper$1, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsxs(CardPreviewTop, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(ICChip, {}),
       cardType === "visa" && /* @__PURE__ */ jsxRuntimeExports.jsx(VisaCard, { width: 36 }),
       cardType === "master" && /* @__PURE__ */ jsxRuntimeExports.jsx(MasterCard, { width: 36 })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(CardPreviewMiddle, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: cardNumber.first }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: cardNumber.second }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: Array.from({ length: cardNumber.third.length }, () => {
-        return MASKING;
-      }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: Array.from({ length: cardNumber.fourth.length }, () => {
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardPreviewNumber, { children: cardNumber.first }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardPreviewNumber, { children: cardNumber.second }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardPreviewNumber, { children: Array.from({ length: cardNumber.third.length }, () => MASKING) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(CardPreviewNumber, { children: Array.from({ length: cardNumber.fourth.length }, () => {
         return MASKING;
       }) })
     ] }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: `${cardExpirationDate.month}${cardExpirationDate.year && " / "}${cardExpirationDate.year}` }) })
   ] });
 }
+const global = css`
+  /** Reset */
+  * {
+    html,
+    body,
+    div,
+    span,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    address,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strong,
+    sub,
+    sup,
+    var,
+    b,
+    u,
+    i,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+      box-sizing: border-box;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+    body {
+      line-height: 1;
+    }
+    ol,
+    ul {
+      list-style: none;
+    }
+    blockquote,
+    q {
+      quotes: none;
+    }
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: '';
+      content: none;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+  }
+`;
+const Wrapper = newStyled.div`
+  width: 480px;
+  height: 100vh;
+  margin: 0 auto;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  padding: 72px 32px;
+  overflow-y: scroll;
+`;
+const CardPreviewWrapper = newStyled.div`
+  display: flex;
+  justify-content: center;
+`;
+const CardInfoForm = newStyled.form`
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+`;
 const getCardType = (cardNumberFirst) => {
   if (VISA_CARD_CONDITIONS.some((value) => cardNumberFirst.startsWith(value))) return "visa";
   if (MASTER_CARD_CONDITIONS.some((value) => cardNumberFirst.startsWith(value))) return "master";
-  return "";
+  return "etc";
 };
 function App() {
   const [cardNumber, setCardNumber] = reactExports.useState({
@@ -13919,7 +14370,8 @@ function App() {
   const [cardCVCNumberErrorMessage, setCardCVCNumberErrorMessage] = reactExports.useState("");
   const cardType = getCardType(cardNumber.first);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(Wrapper, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx(CardPreviewWrapper$1, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardPreview, { cardType, cardNumber, cardExpirationDate }) }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Global, { styles: global }),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(CardPreviewWrapper, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(CardPreview, { cardType, cardNumber, cardExpirationDate }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Spacing, { size: 60 }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs(CardInfoForm, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
